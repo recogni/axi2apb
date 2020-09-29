@@ -13,8 +13,7 @@
 // Derived from testbench for axi_lite_to_apb
 //
 
-`include "axi/typedef.svh"
-`include "axi/assign.svh"
+
 
 package axi2apb;
    // Type widths                                                                                                           
@@ -41,16 +40,6 @@ package axi2apb;
       data_t          prdata;
       logic 			 pslverr;
    } apb_resp_t;
-   
-  `AXI_LITE_TYPEDEF_AW_CHAN_T(aw_chan_t, addr_t)
-  `AXI_LITE_TYPEDEF_W_CHAN_T(w_chan_t, data_t, strb_t)
-  `AXI_LITE_TYPEDEF_B_CHAN_T(b_chan_t)
-
-  `AXI_LITE_TYPEDEF_AR_CHAN_T(ar_chan_t, addr_t)
-  `AXI_LITE_TYPEDEF_R_CHAN_T(r_chan_t, data_t)
-
-  `AXI_LITE_TYPEDEF_REQ_T(axi_req_t, aw_chan_t, w_chan_t, ar_chan_t)
-  `AXI_LITE_TYPEDEF_RESP_T(axi_resp_t, b_chan_t, r_chan_t)
    
 endpackage // axi2apb
    
