@@ -1,6 +1,5 @@
 axi2apb:
   incdirs: [
-    ../../ips/axi/axi/include
   ]
   files: [
     axi2apb_pkg.sv,
