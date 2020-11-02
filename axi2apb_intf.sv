@@ -8,7 +8,8 @@ module axi2apb_intf #(
     parameter integer AXI_DATA_WIDTH = -1,
     parameter integer AXI_ID_WIDTH = -1,
     parameter integer AXI_USER_WIDTH = -1,
-    parameter NoApbSlaves = 1
+    parameter NoApbSlaves = 1,
+    localparam logic [31:0] APBSlotSize = 24'h0001_0000
 ) (
     input logic axi_clk,
     input logic axi_rst,
@@ -193,7 +194,6 @@ module axi2apb_intf #(
   genvar i;
 
   // FIXME (uge) - check resulting map
-  localparam APBSlotSize = 24'h0001_0000;
   axi2apb::rule_t [NoAddrRules-1:0] AddrMap;
   for (i = 0; i < NoAddrRules; i++) begin
     assign AddrMap[i] = '{idx: i, start_addr: (APBSlotSize * i), end_addr: (APBSlotSize * (i + 1))};
