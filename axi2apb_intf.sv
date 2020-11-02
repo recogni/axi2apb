@@ -9,7 +9,7 @@ module axi2apb_intf #(
     parameter integer AXI_ID_WIDTH = -1,
     parameter integer AXI_USER_WIDTH = -1,
     parameter NoApbSlaves = 1,
-    localparam logic [31:0] APBSlotSize = 24'h0001_0000
+    parameter logic [31:0] APBSlotSize = 24'h0001_0000
 ) (
     input logic axi_clk,
     input logic axi_rst,
