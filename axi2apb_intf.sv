@@ -106,9 +106,9 @@ module axi2apb_intf #(
   // Reduce to 24b address range
   //
   logic [23:0] aw_addr_24b;
-  assign aw_addr_24b = axi_slave_32b_d.Slave.aw_addr[23:0];
+  assign aw_addr_24b = axi_slave_32b_d.aw_addr[23:0];
   logic [23:0] ar_addr_24b;
-  assign ar_addr_24b = axi_slave_32b_d.Slave.ar_addr[23:0];
+  assign ar_addr_24b = axi_slave_32b_d.ar_addr[23:0];
 
   AXI_BUS #(
     .AXI_ADDR_WIDTH(24),
